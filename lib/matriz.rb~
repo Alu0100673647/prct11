@@ -123,11 +123,11 @@ class Matriz
       (0..(matriz[0].size - 1)).collect {
 #      for i in 0...matriz[0].size 
           prod[i] = Array.new(matAux.matriz.size,0)
+#          for j in 0...matAux.matriz.size
       	  0.upto(matAux.matriz.size - 1) do |j|
+#              for pos in 0...matriz.size
 	      pos = 0
               (matriz.size - 1).times {
-#          for j in 0...matAux.matriz.size
-#              for pos in 0...matriz.size
                   prod[i][j] = prod[i][j] + (matriz[i][pos] * matAux.matriz[pos][j])
 #              end
 #          end
