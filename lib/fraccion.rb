@@ -121,7 +121,7 @@ class Fraccion
 		#metodo coerce
 	def coerce(frac)
 		return self, Fraccion.new(frac,1)
-    end
+    	end
 
 end
 	
