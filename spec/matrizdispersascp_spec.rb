@@ -1,8 +1,14 @@
+# = matrizdispersascp.rb
+#
 # Etsii ull grado informática
 # Lenguajes y Paradigmas de la programacion
-# Pedro Javier Núñez Rodríguez
-# Constanza Leon Baritussio
-# Fichero de expectativas para las clases MatrizDensa y MatrizDispersa
+# Autor::Pedro Javier Núñez Rodríguez
+# Autor::Constanza Leon Baritussio
+#
+# == Expectativas para matrices densas y dispersas
+# - Programar las expectativas para nuestras clases matriz dispersas y densas
+#
+
 
 require 'spec_helper'
 require 'matrizdispersascp'

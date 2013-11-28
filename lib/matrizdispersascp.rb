@@ -1,8 +1,35 @@
+# = matrizdispersascp.rb
+#
 # Etsii ull grado informática
 # Lenguajes y Paradigmas de la programacion
-# Pedro Javier Núñez Rodríguez
-# Constanza Leon Baritussio
-# Clases MatrizDispersa y MatrizDensa
+# Autor::Pedro Javier Núñez Rodríguez
+# Autor::Constanza Leon Baritussio
+#
+# == Matrices Dispersas y Densas
+# - Librería para el control y operaciones de matrices dispersas y densas
+# - Incluye un fichero rspec para expectativas
+#
+# === Clase Matriz Densa
+# Definicion de la clase MatrizDensa que hereda de la Clase Matriz con los metodos:
+# * initialize: constructor por defecto
+# * to_s: devuelve una matriz en formato string
+# * to_f: devuelve una matriz en formato flotante
+# * -: negacion, devuelve una matriz negada
+# * Sobrecarga de operadores: +, -, *
+#  Devuelve una matriz nueva como resultado de las operaciones anteriores, se le pasa como parametro dos matrices, ej
+#  matrizResultado = matriz1 * matriz2
+# * min y max de los valores de una matriz
+
+# === Clase Matriz Dispersa
+# Definicion de la clase MatrizDispersa que hereda de la Clase Matriz con los metodosS:
+# * initialize: constructor por defecto
+# * to_s: devuelve una matriz en formato string
+# * to_f: devuelve una matriz en formato flotante
+# * -: negacion, devuelve una matriz negada
+# * Sobrecarga de operadores: +, -, *
+#  Devuelve una matriz nueva como resultado de las operaciones anteriores, se le pasa como parametro dos matrices, ej
+#  matrizResultado = matriz1 * matriz2
+# * min y max de los valores de una matriz
 
 require 'matrizdispersascp/version'
 require 'matriz'

@@ -1,8 +1,18 @@
-# Practica 6 Lenguajes y Paradigmas de la Programación
-# Desarrollo Dirigido por el Comportamiento (Behavior Driven Development - BDD)
-# Autores: Pedro Javier Núñez Rodríguez
-#          Constanza Leon Baritussio
-# Fichero que contiene la clase mcd (Máximo Comun Divisor) que nos es necesaria para la clase Fracción
+# = mcd.rb
+#
+# Etsii ull grado informática
+# Lenguajes y Paradigmas de la programacion
+# Autor::Pedro Javier Núñez Rodríguez
+# Autor::Constanza Leon Baritussio
+#
+# == Maximo Comun Divisor
+# - Programar un metodo para calcular el maximo comun divisor de dos valores
+#
+# === Metodo Mcd
+# * Se le pasa por parametro dos parametros numericos
+# * El procedimiento es el siguiente, se calcula primero el valor absoluto de los dos valores y entra
+# en un bucle que va dividiendo los dos numeros por un valor k que aumenta mientras sea menor que 
+# cualquiera de los dos parametros, cuando sale del bucle ya tendra en mcd y lo devuelve en max
 
 def Mcd(u,v)
    u = u.abs  				# Ponemos en valor absoluto ambos valores

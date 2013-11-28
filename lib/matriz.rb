@@ -1,8 +1,24 @@
+# = matriz.rb
+#
 # Etsii ull grado informática
 # Lenguajes y Paradigmas de la programacion
-# Pedro Javier Núñez Rodríguez
-# Constanza Leon Baritussio
-# Clase matriz
+# Autor::Pedro Javier Núñez Rodríguez
+# Autor::Constanza Leon Baritussio
+#
+# == Matrices
+# - Programar las principales operaciones con matrices
+# - Requiere de la clase fraccion, para operar con matrices con fraccionarios
+#
+# === Clase Matriz 
+# Definicion de la clase Matriz con los siguientes metodos:
+# * initialize: constructor por defecto
+# * to_s: devuelve una matriz en formato string
+# * to_f: devuelve una matriz en formato flotante
+# * -: negacion, devuelve una matriz negada
+# * Sobrecarga de operadores: +, -, *
+#  Devuelve una matriz nueva como resultado de las operaciones anteriores, se le pasa como parametro dos matrices, ej
+#  matrizResultado = matriz1 * matriz2
+# * min y max de los valores de una matriz
 
 require 'fraccion'
 
