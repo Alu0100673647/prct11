@@ -25,7 +25,9 @@ describe "Pruebas Matrices" do
 
 			# Matrices densas
 			@matrizA = MatrizDensa.new([[1, 1], [2, 2]])
-			@matrizB = MatrizDensa.new([[1, 1], [2, 2]])       
+			@matrizB = MatrizDensa.new([[1, 1], [2, 2]])
+			@matrizD = MatrizDensa.new([[1, 2, 9], [7, 8, 4]])
+			@matrizX = MatrizDensa.new([[Fraccion.new(1,2), 2],[2,2]])
                        
 		end
 		
@@ -91,6 +93,20 @@ describe "Pruebas Matrices" do
 			    @matrizA.min.should == 1.0
 			end
 		end
+		
+		describe "Metodos para muliplicar en los que se multiplica un numero por una fraccion" do
+			it "Muliplicacion de matrices con distinos tipos" do
+			   @matrizC = (@matrizA * @matrizX)
+			   @matrizC.to_s.should == "{{5/2,4}{5/1,8}}"
+			end
+		    
+		end
+		
+		describe "Bloque" do
+			it "Metodo para probar el codigo encontrar" do
+			   @matrizD.encontrar{|e| (e*e) > 6}.should == "[[0,2][1,0][1,1][1,2]]"
+			end
+		end
 	end
 
 	###############################################################################
@@ -103,6 +119,8 @@ describe "Pruebas Matrices" do
 		    # Matrices dispersas
 		    mat1 = [nil, {1 =>3}]
 		    mat2 = [nil, {1 =>4}]
+		    @matrizX = MatrizDensa.new([[1, 1], [2, 2]])
+		    @matrizY = MatrizDensa.new([[1, 1], [2, 2]]) 
 		    @matrizA = MatrizDispersa.new(mat1)
 		    @matrizB = MatrizDispersa.new(mat2) 
                 end

@@ -59,7 +59,59 @@
   
     <li class="file"><a href="../Rakefile.html">Rakefile</a>
   
+    <li class="file"><a href="../doc/Fraccion_html.html">Fraccion.html</a>
+  
+    <li class="file"><a href="../doc/Gemfile_html.html">Gemfile.html</a>
+  
+    <li class="file"><a href="../doc/Guardfile_html.html">Guardfile.html</a>
+  
+    <li class="file"><a href="../doc/LICENSE_txt_html.html">LICENSE_txt.html</a>
+  
+    <li class="file"><a href="../doc/Matriz_html.html">Matriz.html</a>
+  
+    <li class="file"><a href="../doc/Matrizdispersascp_html.html">Matrizdispersascp.html</a>
+  
+    <li class="file"><a href="../doc/Matrizdispersascp/MatrizDensa_html.html">MatrizDensa.html</a>
+  
+    <li class="file"><a href="../doc/Matrizdispersascp/MatrizDispersa_html.html">MatrizDispersa.html</a>
+  
+    <li class="file"><a href="../doc/Object_html.html">Object.html</a>
+  
+    <li class="file"><a href="../doc/Rakefile_html.html">Rakefile.html</a>
+  
     <li class="file"><a href="../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="../doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="../doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="../doc/lib/fraccion_rb~_html.html">fraccion_rb~.html</a>
+  
+    <li class="file"><a href="../doc/lib/matriz_rb~_html.html">matriz_rb~.html</a>
+  
+    <li class="file"><a href="../doc/lib/matrizdispersascp_rb~_html.html">matrizdispersascp_rb~.html</a>
+  
+    <li class="file"><a href="../doc/lib/mcd_rb~_html.html">mcd_rb~.html</a>
+  
+    <li class="file"><a href="../doc/matrizdispersascp_gemspec_html.html">matrizdispersascp_gemspec.html</a>
+  
+    <li class="file"><a href="../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="../doc/spec/matrizdispersascp_spec_rb~_html.html">matrizdispersascp_spec_rb~.html</a>
+  
+    <li class="file"><a href="../doc/table_of_contents_html.html">table_of_contents.html</a>
   
     <li class="file"><a href="../lib/fraccion_rb~.html">fraccion.rb~</a>
   
@@ -101,9 +153,11 @@
 
 <div id="documentation" class="description">
   
-<p># Etsii ull grado informática # Lenguajes y Paradigmas de la programacion #
-Pedro Javier Núñez Rodríguez # Constanza Leon Baritussio # Fichero de
-expectativas para las clases MatrizDensa y MatrizDispersa</p>
+<p># = matrizdispersascp.rb # # Etsii ull grado informática # Lenguajes y
+Paradigmas de la programacion # Autor::Pedro Javier Núñez Rodríguez #
+Autor::Constanza Leon Baritussio # # == Expectativas para matrices densas y
+dispersas # - Programar las expectativas para nuestras clases matriz
+dispersas y densas #</p>
 
 <p>require &#39;spec_helper&#39; require &#39;matrizdispersascp&#39; include
 <a href="../Matrizdispersascp.html">Matrizdispersascp</a></p>
@@ -119,11 +173,13 @@ expectativas para las clases MatrizDensa y MatrizDispersa</p>
 
                 <span class="ruby-comment"># Matrices densas</span>
                 <span class="ruby-ivar">@matrizA</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">1</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">2</span>]])
-                <span class="ruby-ivar">@matrizB</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">1</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">2</span>]])       
+                <span class="ruby-ivar">@matrizB</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">1</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">2</span>]])
+                <span class="ruby-ivar">@matrizD</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">9</span>], [<span class="ruby-value">7</span>, <span class="ruby-value">8</span>, <span class="ruby-value">4</span>]])
+                <span class="ruby-ivar">@matrizX</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>), <span class="ruby-value">2</span>],[<span class="ruby-value">2</span>,<span class="ruby-value">2</span>]])
 
         <span class="ruby-keyword">end</span>
 
-        <span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Metodos para la comprobacion de la inicialización y asignacion de valores&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Metodos para la comprobacion de la inicializacion y asignacion de valores&quot;</span> <span class="ruby-keyword">do</span>
 
                 <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se inicializa correctamente la matriz &quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-comment"># Comprobamos que todas las casillas estan a cero cuando se crea el objeto</span>
                         <span class="ruby-ivar">@matrizA</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>].<span class="ruby-identifier">should</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
@@ -185,6 +241,20 @@ expectativas para las clases MatrizDensa y MatrizDispersa</p>
                     <span class="ruby-ivar">@matrizA</span>.<span class="ruby-identifier">min</span>.<span class="ruby-identifier">should</span> <span class="ruby-operator">==</span> <span class="ruby-value">1.0</span>
                 <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Metodos para muliplicar en los que se multiplica un numero por una fraccion&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Muliplicacion de matrices con distinos tipos&quot;</span> <span class="ruby-keyword">do</span>
+                   <span class="ruby-ivar">@matrizC</span> = (<span class="ruby-ivar">@matrizA</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@matrizX</span>)
+                   <span class="ruby-ivar">@matrizC</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">should</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;{{5/2,4}{5/1,8}}&quot;</span>
+                <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Bloque&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Metodo para probar el codigo encontrar&quot;</span> <span class="ruby-keyword">do</span>
+                   <span class="ruby-ivar">@matrizD</span>.<span class="ruby-identifier">encontrar</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">e</span><span class="ruby-operator">*</span><span class="ruby-identifier">e</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">6</span>}.<span class="ruby-identifier">should</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;[[[0,2][1,0][1,1][1,2]]&quot;</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span>
 
 <span class="ruby-comment">###############################################################################</span>
@@ -197,6 +267,8 @@ expectativas para las clases MatrizDensa y MatrizDispersa</p>
             <span class="ruby-comment"># Matrices dispersas</span>
             <span class="ruby-identifier">mat1</span> = [<span class="ruby-keyword">nil</span>, {<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value">3</span>}]
             <span class="ruby-identifier">mat2</span> = [<span class="ruby-keyword">nil</span>, {<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value">4</span>}]
+            <span class="ruby-ivar">@matrizX</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">1</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">2</span>]])
+            <span class="ruby-ivar">@matrizY</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">1</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">2</span>]]) 
             <span class="ruby-ivar">@matrizA</span> = <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">mat1</span>)
             <span class="ruby-ivar">@matrizB</span> = <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">mat2</span>) 
         <span class="ruby-keyword">end</span>
@@ -226,13 +298,12 @@ expectativas para las clases MatrizDensa y MatrizDispersa</p>
         <span class="ruby-keyword">end</span>
 
         <span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Metodo para la comprobacion de maximos y minimos&quot;</span> <span class="ruby-keyword">do</span>
-            <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;se suman dos matrices dispersas&quot;</span> <span class="ruby-keyword">do</span>
-               (<span class="ruby-ivar">@matrizA</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@matrizA</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">should</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;{{0, 0}}{0, 6}}&quot;</span>
-
+            <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;se calcula el maximo de una matriz&quot;</span> <span class="ruby-keyword">do</span>
+               <span class="ruby-ivar">@matrizA</span>.<span class="ruby-identifier">max</span> <span class="ruby-operator">==</span>  <span class="ruby-value">3</span>             
             <span class="ruby-keyword">end</span>
 
-            <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se restan dos matrices dispersas&quot;</span> <span class="ruby-keyword">do</span>
-                (<span class="ruby-ivar">@matrizA</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@matrizB</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">should</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;{{0, 0}}{0, -1}}&quot;</span>
+            <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se calcula el minimo de una matriz&quot;</span> <span class="ruby-keyword">do</span>
+               <span class="ruby-ivar">@matrizB</span>.<span class="ruby-identifier">min</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
             <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span>

@@ -30,7 +30,7 @@
 #  matrizResultado = matriz1 * matriz2
 # * min y max de los valores de una matriz
 
-require 'matrizdispersascp/version'
+#require 'matrizdispersascp/version'
 require 'matriz'
 require 'fraccion'
 
@@ -47,6 +47,19 @@ module Matrizdispersascp
 	    @columnas = m[0].size
     	    @matriz = m;
 	end
+	
+	def encontrar
+	s = "["
+	for i in 0...matriz.size
+	  for j in 0...matriz[0].size
+	     if (yield(matriz[i][j]))  # Comprobamos que el cuadrado de esa posicion no sea maor que el parametro e
+	       s += "[#{i},#{j}]"
+	     end
+	  end
+       end
+       s += "]"
+       s
+      end
 		
     end
 	
@@ -219,6 +232,11 @@ module Matrizdispersascp
                 end                                
             end
             minimo
-        end
+	end
+      
+    
+	def coerce(matriz)
+	  return self, MatrizDispersa.new(matriz)
+      end
     end
 end

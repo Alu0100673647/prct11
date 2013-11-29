@@ -163,10 +163,6 @@ end
      end
      minimo
  end  
-   
- #def coerce(something)
- #  [self, Fraccion.new(something)]
- #end
 
 end
 
