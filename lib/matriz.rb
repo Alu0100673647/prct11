@@ -131,31 +131,24 @@ class Matriz
 #      end
       mat
    end
-   
-  def * matAux			#Método para hacer la multiplicacion de matrices
-      prod = Array.new(matriz.size - 1,0)
+  
+def * matAux   #Método para hacer la multiplicacion de matrices
 
-      i = 0
-      (0..(matriz[0].size - 1)).collect {
-#      for i in 0...matriz[0].size 
-          prod[i] = Array.new(matAux.matriz.size,0)
-#          for j in 0...matAux.matriz.size
-      	  0.upto(matAux.matriz.size - 1) do |j|
-#              for pos in 0...matriz.size
-	      pos = 0
-              (matriz.size - 1).times {
-                  prod[i][j] = prod[i][j] + (matriz[i][pos] * matAux.matriz[pos][j])
-#              end
-#          end
-#      end
-	      pos += 1
-	      }
-	  end
-      i += 1
-      }
-     Matriz.new(prod)
- end
+   prod = Array.new(matriz.size - 1,0)
+   (matriz[0].size).times do |i|
  
+      prod[i] = Array.new(matAux.matriz.size,0)
+      0.upto(matAux.matriz.size - 1) do |j|  
+         pos = 0
+         (0...(matriz.size)).collect {
+            prod[i][j] = prod[i][j] + (matriz[i][pos] * matAux.matriz[pos][j])
+            pos += 1             
+         }
+      end
+   end
+   Matriz.new(prod)
+end
+
  def max
      maximo = 0.to_f
      for i in 0...matriz.size

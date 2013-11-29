@@ -1,8 +1,24 @@
+# = matriz.rb
+#
 # Etsii ull grado informática
 # Lenguajes y Paradigmas de la programacion
-# Pedro Javier Núñez Rodríguez
-# Constanza Leon Baritussio
-# Clase matriz
+# Autor::Pedro Javier Núñez Rodríguez
+# Autor::Constanza Leon Baritussio
+#
+# == Matrices
+# - Programar las principales operaciones con matrices
+# - Requiere de la clase fraccion, para operar con matrices con fraccionarios
+#
+# === Clase Matriz 
+# Definicion de la clase Matriz con los siguientes metodos:
+# * initialize: constructor por defecto
+# * to_s: devuelve una matriz en formato string
+# * to_f: devuelve una matriz en formato flotante
+# * -: negacion, devuelve una matriz negada
+# * Sobrecarga de operadores: +, -, *
+#  Devuelve una matriz nueva como resultado de las operaciones anteriores, se le pasa como parametro dos matrices, ej
+#  matrizResultado = matriz1 * matriz2
+# * min y max de los valores de una matriz
 
 require 'fraccion'
 
@@ -115,31 +131,24 @@ class Matriz
 #      end
       mat
    end
-   
-  def * matAux			#Método para hacer la multiplicacion de matrices
-      prod = Array.new(matriz.size - 1,0)
+  
+def * matAux   #Método para hacer la multiplicacion de matrices
 
-      i = 0
-      (0..(matriz[0].size - 1)).collect {
-#      for i in 0...matriz[0].size 
-          prod[i] = Array.new(matAux.matriz.size,0)
-#          for j in 0...matAux.matriz.size
-      	  0.upto(matAux.matriz.size - 1) do |j|
-#              for pos in 0...matriz.size
-	      pos = 0
-              (matriz.size - 1).times {
-                  prod[i][j] = prod[i][j] + (matriz[i][pos] * matAux.matriz[pos][j])
-#              end
-#          end
-#      end
-	      pos += 1
-	      }
-	  end
-      i += 1
-      }
-     Matriz.new(prod)
- end
+   prod = Array.new(matriz.size - 1,0)
+   (matriz[0].size).times do |i|
  
+      prod[i] = Array.new(matAux.matriz.size,0)
+      0.upto(matAux.matriz.size - 1) do |j|  
+         pos = 0
+         (0...(matriz.size)).collect {
+            prod[i][j] = prod[i][j] + (matriz[i][pos] * matAux.matriz[pos][j])
+            pos += 1             
+         }
+      end
+   end
+   Matriz.new(prod)
+end
+
  def max
      maximo = 0.to_f
      for i in 0...matriz.size
