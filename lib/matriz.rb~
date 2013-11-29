@@ -114,21 +114,13 @@ class Matriz
       mat
    end
    
-   def - matAux			#Método para hacer la resta de  matrices
+   def - matAux   #Método para hacer la resta de  matrices
       mat = Matriz.new(matAux.matriz)
-#      for i in (0...filas)
-#          for j in (0...columnas)
-      i = 0
-      (filas - 1).times {
-	j = 0
-        (columnas - 1).times {
+      (matAux.matriz.size).times do |i|
+        (matAux.matriz.size).times do |j|
             mat.matriz[i][j] = (matriz[i][j] - matAux.matriz[i][j])
-	    j += 1
-	}
-      i += 1
-      }
-#          end
-#      end
+          end
+      end
       mat
    end
   
