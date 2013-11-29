@@ -2,8 +2,7 @@
 #
 # Etsii ull grado informática
 # Lenguajes y Paradigmas de la programacion
-# Autor::Pedro Javier Núñez Rodríguez
-# Autor::Constanza Leon Baritussio
+# Autor::Pedro Javier Núñez Rodríguez y Constanza Leon Baritussio
 #
 # == Matrices
 # - Programar las principales operaciones con matrices

@@ -50,7 +50,6 @@
   <h3 class="section-header">Defined In</h3>
   <ul>
     <li>lib/matrizdispersascp.rb
-    <li>lib/matrizdispersascp/matrizdispersascp.rb
   </ul>
 </nav>
 
@@ -115,11 +114,9 @@
   
     <li class="file"><a href="../lib/matriz_rb~.html">matriz.rb~</a>
   
-    <li class="file"><a href="../lib/matrizdispersa_rb~.html">matrizdispersa.rb~</a>
-  
     <li class="file"><a href="../lib/matrizdispersascp_rb~.html">matrizdispersascp.rb~</a>
   
-    <li class="file"><a href="../lib/matrizdispersascp/version_rb~.html">version.rb~</a>
+    <li class="file"><a href="../lib/mcd_rb~.html">mcd.rb~</a>
   
     <li class="file"><a href="../matrizdispersascp_gemspec.html">matrizdispersascp.gemspec</a>
   
@@ -241,7 +238,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">matriz</span>)
     <span class="ruby-ivar">@matriz</span> = <span class="ruby-identifier">matriz</span>
     <span class="ruby-ivar">@filas</span> = <span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>
@@ -283,7 +280,7 @@
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 141</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 167</span>
         <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">o</span>)
             <span class="ruby-keyword">if</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">col</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">row</span>)
                  <span class="ruby-identifier">matres</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">row</span>,<span class="ruby-keyword">self</span>.<span class="ruby-identifier">col</span>)
@@ -338,7 +335,7 @@
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 84</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 110</span>
         <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">o</span>)
             <span class="ruby-identifier">suma</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
 <span class="ruby-comment">#            for i in 0...matriz.size</span>
@@ -393,7 +390,7 @@
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 111</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 137</span>
         <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">o</span>)
            <span class="ruby-identifier">resta</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
 <span class="ruby-comment">#            for i in 0...matriz.size</span>
@@ -451,7 +448,7 @@
 
           
           <div class="method-source-code" id="max-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 168</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 194</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
     <span class="ruby-identifier">maximo</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">to_f</span>
     <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>
@@ -494,7 +491,7 @@
 
           
           <div class="method-source-code" id="min-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 183</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 209</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
 
  <span class="ruby-identifier">minimo</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">to_f</span>
@@ -538,7 +535,7 @@
 
           
           <div class="method-source-code" id="to_f-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 69</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 95</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_f</span>
     <span class="ruby-identifier">flotante</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
     <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>
@@ -581,7 +578,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 38</span>
+            <pre><span class="ruby-comment"># File lib/matrizdispersascp.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
     <span class="ruby-identifier">fil</span> = <span class="ruby-value">0</span>
     <span class="ruby-identifier">st</span> = <span class="ruby-string">&quot;{&quot;</span>
@@ -631,7 +628,7 @@
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

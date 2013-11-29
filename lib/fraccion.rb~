@@ -1,8 +1,26 @@
+# = fraccion.rb
+#
 # Etsii ull grado informática
 # Lenguajes y Paradigmas de la programacion
-# Pedro Javier Núñez Rodríguez
-# Constanza Leon Baritussio
-# Clase matriz
+# Autor::Pedro Javier Núñez Rodríguez y Constanza Leon Baritussio
+#
+# == Fracciones
+# - Programar las principales operaciones con fraccionarios
+# - Requiere del fichero mcd para calcular el maximo comun divisor
+#
+# === Clase Fraccion
+# Definicion de la clase Fraccion con los siguientes metodos:
+# * initialize: constructor por defecto
+# * reduce: reduce el denominador y el numerador al minimo
+# * num(): devuelve el numerador
+# * denom(): devuelve el denominador
+# * to_s: devuelve la fraccion en formato string
+# * to_f: devuelve la fraccion en formato flotante
+# * ==: Sobrecarga del operador == para comparacion de fracciones
+# * Sobrecarga de operadores: +, -, *
+#  Devuelve una fraccion nueva como resultado de las operaciones anteriores, se le pasa como parametro dos fracciones, ej
+#  fraccionResultado = fracion1 + fraccion2
+# * %: devuelve el resto reducido de dos fracciones
 
 require 'mcd'
 

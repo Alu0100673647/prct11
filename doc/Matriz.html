@@ -50,7 +50,6 @@
   <h3 class="section-header">Defined In</h3>
   <ul>
     <li>lib/matriz.rb
-    <li>lib/matrizdispersascp/matriz.rb
   </ul>
 </nav>
 
@@ -133,11 +132,9 @@
   
     <li class="file"><a href="./lib/matriz_rb~.html">matriz.rb~</a>
   
-    <li class="file"><a href="./lib/matrizdispersa_rb~.html">matrizdispersa.rb~</a>
-  
     <li class="file"><a href="./lib/matrizdispersascp_rb~.html">matrizdispersascp.rb~</a>
   
-    <li class="file"><a href="./lib/matrizdispersascp/version_rb~.html">version.rb~</a>
+    <li class="file"><a href="./lib/mcd_rb~.html">mcd.rb~</a>
   
     <li class="file"><a href="./matrizdispersascp_gemspec.html">matrizdispersascp.gemspec</a>
   
@@ -259,7 +256,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">m</span>)
     <span class="ruby-ivar">@filas</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">size</span>
     <span class="ruby-ivar">@columnas</span> = <span class="ruby-identifier">m</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">size</span>
@@ -300,7 +297,7 @@
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num</span>                    <span class="ruby-comment">#Método que multiplica un número por una matriz</span>
     <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Matriz</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">matriz</span>)
     <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">filas</span>)
@@ -339,13 +336,13 @@
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 89</span>
-   <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">matAux</span>                 <span class="ruby-comment">#Método para hacer la suma de de matrices</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 104</span>
+   <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">matAux</span>   <span class="ruby-comment">#Método para hacer la suma de de matrices</span>
       <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Matriz</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>)
 <span class="ruby-comment">#      for i in (0...filas)</span>
 <span class="ruby-comment">#          for j in (0...columnas)</span>
-      <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">filas</span> <span class="ruby-value">-1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
-          <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">columnas</span> <span class="ruby-value">-1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+      <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+          <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
               <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = (<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>])
           <span class="ruby-keyword">end</span>
       <span class="ruby-keyword">end</span>
@@ -380,24 +377,16 @@
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 101</span>
-   <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">matAux</span>                 <span class="ruby-comment">#Método para hacer la resta de  matrices</span>
-      <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Matriz</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>)
-<span class="ruby-comment">#      for i in (0...filas)</span>
-<span class="ruby-comment">#          for j in (0...columnas)</span>
-      <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
-      (<span class="ruby-identifier">filas</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> {
-        <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
-        (<span class="ruby-identifier">columnas</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> {
-            <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = (<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>])
-            <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-        }
-      <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-      }
-<span class="ruby-comment">#          end</span>
-<span class="ruby-comment">#      end</span>
-      <span class="ruby-identifier">mat</span>
-   <span class="ruby-keyword">end</span></pre>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">matAux</span>   <span class="ruby-comment">#Método para hacer la resta de  matrices</span>
+   <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Matriz</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>)
+   (<span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+     (<span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+         <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = (<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">matAux</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>])
+       <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-identifier">mat</span>
+<span class="ruby-keyword">end</span></pre>
           </div><!-- 2D-source -->
           
         </div>
@@ -427,7 +416,7 @@
 
           
           <div class="method-source-code" id="2D-40-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 67</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-@</span>                       <span class="ruby-comment"># Sobrecarga del operador - para calcular el opuesto de una matriz</span>
         <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Matriz</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">matriz</span>)
     <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">filas</span>) 
@@ -468,7 +457,7 @@
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">fila</span>, <span class="ruby-identifier">columna</span>)
              <span class="ruby-ivar">@matriz</span>[<span class="ruby-identifier">fila</span>][<span class="ruby-identifier">columna</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -501,7 +490,7 @@
 
           
           <div class="method-source-code" id="5B-5D-3D-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">fila</span>, <span class="ruby-identifier">columna</span>, <span class="ruby-identifier">valor</span>)
     <span class="ruby-ivar">@matriz</span>[<span class="ruby-identifier">fila</span>][<span class="ruby-identifier">columna</span>] = <span class="ruby-identifier">valor</span>
 <span class="ruby-keyword">end</span></pre>
@@ -616,7 +605,7 @@
 
           
           <div class="method-source-code" id="to_f-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_f</span>                     <span class="ruby-comment"># Método encargado de mostrar por  la consola la matriz en formato flotante</span>
     <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;&quot;</span>
         <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;{&quot;</span>
@@ -664,8 +653,8 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 29</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>                     <span class="ruby-comment">#Método encargado de mostrar por consola la matriz de forma matriz[i][j]         </span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>                     <span class="ruby-comment">#Método encargado de mostrar por consola la matriz de forma matriz[i][j]          </span>
         <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;&quot;</span>
         <span class="ruby-identifier">s</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;{&quot;</span>
     <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">filas</span>)
@@ -702,7 +691,7 @@
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

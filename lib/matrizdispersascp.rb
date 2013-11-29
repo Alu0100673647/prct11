@@ -2,8 +2,7 @@
 #
 # Etsii ull grado informática
 # Lenguajes y Paradigmas de la programacion
-# Autor::Pedro Javier Núñez Rodríguez
-# Autor::Constanza Leon Baritussio
+# Autor::Pedro Javier Núñez Rodríguez y Constanza Leon Baritussio
 #
 # == Matrices Dispersas y Densas
 # - Librería para el control y operaciones de matrices dispersas y densas
