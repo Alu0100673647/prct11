@@ -102,12 +102,12 @@ class Matriz
        mat
    end
    
-   def + matAux			#Método para hacer la suma de de matrices
+   def + matAux   #Método para hacer la suma de de matrices
       mat = Matriz.new(matAux.matriz)
 #      for i in (0...filas)
 #          for j in (0...columnas)
-      0.upto(filas -1) do |i|
-          0.upto(columnas -1) do |j|
+      0.upto(matAux.matriz.size - 1) do |i|
+          0.upto(matAux.matriz.size - 1) do |j|
               mat.matriz[i][j] = (matriz[i][j] + matAux.matriz[i][j])
           end
       end
